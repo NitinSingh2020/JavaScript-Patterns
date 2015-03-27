@@ -3,45 +3,47 @@
 	document.addEventListener("DOMContentLoaded", function(event) {
 		console.log("DOM fully loaded and parsed");
 
-		// References to our DOM elements
+		/* References to our DOM elements */
 		var controlCheckbox = document.getElementById( "mainCheckbox" ),
 			addBtn = document.getElementById( "addNewObserver" ),
 			container = document.getElementById( "observersContainer" );
 		
 		
-		// Concrete Subject
+		/* Concrete Subject
+		 * ============= */
 		
-		// Extend the controlling checkbox with the Subject class
+		/* Extend the controlling checkbox with the Subject class */
 		JSP.utilityModule.extend( new JSP.observerModule.Subject(), controlCheckbox );
 
-		// Clicking the checkbox will trigger notifications to its observers
-		controlCheckbox.onclick = function(){
+		/* Clicking the checkbox will trigger notifications to its observers */
+		controlCheckbox.onclick = function() {
 			controlCheckbox.notify( controlCheckbox.checked );
 		};
 		
 		addBtn.onclick = addNewObserver;
 		
-		// Concrete Observer
+		/* Concrete Observer
+		 * ============== */
 		
-		function addNewObserver(){
+		function addNewObserver() {
 		
-			// Create a new checkbox to be added
+			/* Create a new checkbox to be added */
 			var check  = document.createElement( "input" );
 			check.type = "checkbox";
 		
-			// Extend the checkbox with the Observer class
+			/* Extend the checkbox with the Observer class */
 			JSP.utilityModule.extend( new JSP.observerModule.Observer(), check );
 		
-			// Override with custom update behaviour
-			check.update = function( value ){
+			/* Override with custom update behaviour */
+			check.update = function( value ) {
 				this.checked = value;
 			};
 		
-			// Add the new observer to our list of observers
-			// for our main subject
+			/* Add the new observer to our list
+			 * of observers for our main subject */
 			controlCheckbox.addObserver( check );
 		
-			// Append the item to the container
+			/* Append the item to the container */
 			container.appendChild( check );
 		}
 	});
