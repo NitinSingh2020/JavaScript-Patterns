@@ -17,11 +17,17 @@ var JavaScript_Patterns = (function ( parent ){
     /* Public Functions Exposed as API
      * ============================ */
 
-    /* Function to extend an object with an extension */
+    /* Method to extend an object with an extension */
     _localModule.extend = function( extension, obj ){
         for ( var key in extension ){
             obj[key] = extension[key];
         }
+    };
+
+    /* Method to remove special characters in user-input */
+    _localModule.removeBadString = function (strTemp) {
+        strTemp = strTemp.replace(/\<|\>|\"|\'|\%|\;|\(|\)|\&|\+|\-/g,' ');
+        return strTemp;
     };
 
     /* Return Module in the global scope */
