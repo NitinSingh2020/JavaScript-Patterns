@@ -7,7 +7,7 @@ var car = {
 	year : "2012"
 };
 
-/* 2. using using an object constructor */
+/* 2. using an object constructor */
 var person = new Object();
 person.name = "Captain Jack Sparrow";
 person.occupation = "Pirate";
