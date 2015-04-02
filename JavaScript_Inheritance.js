@@ -46,6 +46,14 @@ function Animal(name, numLegs) {
     this.name = name;
     this.numLegs = numLegs;
     this.isAlive = true;
+
+    // Define private variable
+    var isBird = false;
+
+    // Access private variable throug closure
+    this.isBird = function () {
+    	return isBird;
+    };
 }
 function Penguin(name) {
     this.name = name;
@@ -62,6 +70,7 @@ Emperor.prototype = new Penguin();
 
 var myEmperor = new Emperor("Jules");
 
-console.log( myEmperor.saying );  // should print "Waddle waddle"
-console.log( myEmperor.numLegs ); // should print 2
-console.log( myEmperor.isAlive ); // should print true
+console.log( myEmperor.saying );   // should print "Waddle waddle"
+console.log( myEmperor.numLegs );  // should print 2
+console.log( myEmperor.isAlive );  // should print true
+console.log( myEmperor.isBird() ); // should print false
