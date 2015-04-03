@@ -67,8 +67,8 @@ loadScript("url_1", function(){
         "${pageContext.request.contextPath}/web/common/js/vendor/socket-io/socket.io.js",
         "${pageContext.request.contextPath}/web/common/js/notification_container.js"];
 
-    function scriptLoaderCalback() {
+    function scriptLoaderCallback() {
     	console.log('All Scripts Loaded');
     };
 
-    l.require(script_list, scriptLoaderCalback);
+    l.require(script_list, scriptLoaderCallback);
