@@ -27,3 +27,15 @@ a2.splice(1, 2); // This deletes "Jimmy Dean" and "Meg Ryan", a2.length == 2
  * ======================================= */
 var a2 = ["John Smith", "Jimmy Dean", "Meg Ryan", "Spider Man"];
 a2.splice(1, 2, "Iron Man", "Hulk", "Jackie Chan");
+
+/* Removes last element and returns it */
+var a2 = ["John Smith", "Jimmy Dean", "Meg Ryan", "Spider Man"];
+lastElement = a2.pop()
+
+/* Removes first element and returns it */
+var a2 = ["John Smith", "Jimmy Dean", "Meg Ryan", "Spider Man"];
+firstElement = a2.shift()
+
+/* Adds new elements to the beginning of the array and returns the new length */
+var a2 = ["John Smith", "Jimmy Dean", "Meg Ryan", "Spider Man"];
+newLength = a2.unshift("Jackie Chan");
